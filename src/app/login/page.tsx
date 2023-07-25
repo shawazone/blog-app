@@ -5,7 +5,7 @@ import React from "react";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-
+import {signIn} from 'next-auth/react'
 
 interface initialStatePorps {
 
@@ -29,6 +29,22 @@ const register = () => {
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
+
+    signIn('credentials', {
+      ...state,
+      redirect:false,
+   })
+   .then((callback) => {
+
+      if(callback?.ok) {
+          router.refresh()
+      }
+
+      if(callback?.error) {
+          throw new Error('Wrong Credentials')
+      }
+   })
+   router.push('/')
 
   };
 
