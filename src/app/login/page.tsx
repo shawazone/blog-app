@@ -1,6 +1,6 @@
 "use client";
 
-import InputFeild from "@/components/InputFeild";
+import InputFeild from "@/components/input/InputFeild";
 import React from "react";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
