@@ -1,5 +1,5 @@
 "use client";
-import InputFeild from "@/components/input/InputFeild";
+import InputFeild from "@/components/InputFeild";
 import React from "react";
 import axios from "axios";
 import { FormEvent, useState } from "react";
