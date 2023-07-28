@@ -22,6 +22,7 @@
     "cloudinary": "^1.37.3",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.10",
+    "formik": "^2.4.2",
     "graphql-request": "^6.1.0",
     "jsonwebtoken": "^9.0.1",
     "next": "13.4.10",
@@ -30,7 +31,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@grafbase/sdk": "^0.2.0",

@@ -34,14 +34,11 @@ const register = () => {
       .post("/api/register", state)
       .then(() => {
         router.refresh();
-      })
-      .then(() => {
-        setTimeout(() => {
-          router.push("/login");
-        }, 2500);
-      })
+      }) 
       .catch((err: any) => {})
-      .finally(() => {});
+      .finally(() => {
+        router.push("/login");
+      });
   };
 
   return (
