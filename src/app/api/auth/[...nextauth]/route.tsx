@@ -49,7 +49,7 @@ console.log('user');
     }),
   ],
   pages: {
-    signIn: '/Login',
+    signIn: '/auth/signin',
   },
   callbacks: {
     session: ({ session, token }) => {
