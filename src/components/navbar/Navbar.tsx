@@ -17,27 +17,22 @@ interface UserMenuProps {
   return (
     <header>
          <nav className='bg-gray-200 flex justify-between px-4 py-6 shadow-xl'>
-            {/* <div>{currentUser?.name}.</div> */}
+            
+            
             <div>   
                  {session?(
-               <Link
-                 href="javascript:void(0)"
-                 className="block py-2 px-5 text-base font-semibold text-body-color hover:bg-primary    text-black hover:bg-red-300 hover:rounded-lg  hover:border-transparent hover:border-1
-                  hover:border-red-700"
-                 onClick={() => signOut()}
-               >
-                 sign out
-               </Link>
+                  <div> welcome :{currentUser?.name},{session?.user?.name}</div>
+             
  
                ):
-               (<div>uwuuwuwu</div>)
+               (<div>you are not signed in</div>)
                }</div>
 
             <div className='flex gap-4'>
             <Link href='/'>Home</Link>
             <Link href='/create'>Create</Link>
-            {currentUser ? <button onClick={() => signOut()}>Sign out</button> : <Link href='/register'>Register</Link>}
-            <button onClick={() => signOut()}>Sign out</button>
+            {currentUser ? <button onClick={() => signOut()}>Sign out</button> : <Link href='/login'>sign in</Link>}
+            <button onClick={() => signOut()}>Sign out</button> 
             </div>
         </nav>
     </header>
