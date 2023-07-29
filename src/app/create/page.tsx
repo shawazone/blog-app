@@ -3,10 +3,9 @@
 import React,{ChangeEvent, FormEvent, useMemo, useState} from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
+import { toast } from 'react-hot-toast'
 import InputFeild from '@/components/InputFeild/InputFeild'
-// import { toast } from 'react-hot-toast'
-
-// import ImageUpload from '@/components/ImageUpload'
+import ImageUpload from '@/components/input/ImageUpload'
 
 
 
@@ -35,23 +34,23 @@ export default function page() {
 
     const onSubmit = (event:FormEvent) => {
 
-        // setIsLoading(true)
+        setIsLoading(true)
 
-        // event.preventDefault()
+        event.preventDefault()
 
-        // axios.post('/api/blogs',state)
-        // .then(() => {
-        //     toast.success('Created successfully')
-        //     router.refresh()
-        //     router.push('/')
-        //     // router.push('/')
-        // })
+        axios.post('/api/blogs',state)
+        .then(() => {
+            toast.success('Created successfully')
+            router.refresh()
+            router.push('/')
+            // router.push('/')
+        })
 
-        // .catch(() => {
-        //     toast.error('Went wring') 
-        // }).finally(() => {
-        //     setIsLoading(false)
-        // })
+        .catch(() => {
+            toast.error('Went wring') 
+        }).finally(() => {
+            setIsLoading(false)
+        })
     }
 	function handleChange(event:ChangeEvent<HTMLInputElement> ) {
 		setState({ ...state, [event.target.name]: event.target.value });
@@ -72,7 +71,7 @@ export default function page() {
                             <ImageUpload value={state.imageSrc} onChange={(value) => setCustomValue('imageSrc',value)}/>
                         </div>
 
-        <div  className='flex flex-col justify-center h-[450px] w-[350px] mx-auto gap-2'>
+        <div  className='flex flex-col justify-center h-[290px] w-[350px] mx-auto gap-2'>
         <InputFeild placeholder='Blog header' id='name' type='text' value={state.name} name='name' onChange={handleChange}/>
         <InputFeild big placeholder='Blog content or description' id='description' type='text' value={state.description} name='description' onChange={handleChange}/>
         <div> 
