@@ -37,7 +37,7 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
 
     <CldUploadWidget
     onUpload={handleUpload}
-    uploadPreset='fn4yyw2l'
+    uploadPreset='blogApp'
     options={{
         maxFiles:1
     }}
