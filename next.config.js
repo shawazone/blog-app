@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-// module.exports = nextConfig
-// next.config.js
-module.exports = {
+const nextConfig = {
     images: {
-      loader: "custom"
+        domains: [
+            "res.cloudinary.com"
+        ]
     }
-  }
+}
+
+module.exports = nextConfig
