@@ -5,6 +5,11 @@ import Image from 'next/image'
 import { useCallback } from 'react'
 import { TbPhotoPlus } from 'react-icons/tb'
 
+
+
+
+
+
 declare global {
     var cloudinary: any;
 }
@@ -13,6 +18,7 @@ interface ImageUploadProps {
     onChange: (value:string) => void
     value:string
 }
+
 
 const ImageUpload:React.FC<ImageUploadProps> = ({
     onChange,
@@ -25,6 +31,10 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
     },[onChange])
 
   return (
+
+  
+
+
     <CldUploadWidget
     onUpload={handleUpload}
     uploadPreset='fn4yyw2l'
