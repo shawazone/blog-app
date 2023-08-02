@@ -1,24 +1,29 @@
-'use client'
-// import ourPic from "../public/ourPic.svg";
-// import Image from "next/image";
+import SingleBlog from "@/components/SingleBlog";
+import getBlogs,{IBlogParams} from "./actions/getBlogs"
+import getCurrentUser from "./actions/getCurrentUser"
+import Link from "next/link";
 
-import { signIn } from "next-auth/react";
-
-
-const HomePage =  () => {
- 
-   
+interface HomeProps {
+  searchParams: IBlogParams
+};
 
 
 
-    return (
-      <div className=" bg-center h-screen overflow-hidden" >
-   
-   
-    </div>
-    
-    );
-  };
-  
-  export default HomePage;
-  
+export default async function Home({searchParams}:HomeProps) {
+
+  const currentUser = await getCurrentUser();
+
+  const blogs = await getBlogs(searchParams)
+
+  return (
+    <main className="flex min-h-screen flex-col items-center justify-between p-4 gap-1">
+        {blogs.map((item:any) => (
+          <SingleBlog
+          key={item.id}
+          data={item}
+          currentUser={currentUser}
+          />
+        ))}
+    </main>
+  )
+  }
