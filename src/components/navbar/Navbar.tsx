@@ -21,7 +21,7 @@ interface UserMenuProps {
             
             <div>   
                  {session?(
-                  <div> welcome :{currentUser?.name},{session?.user?.name}</div>
+                  <div> welcome :{session?.user?.name}</div>
              
  
                ):
