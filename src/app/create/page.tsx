@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { toast } from 'react-hot-toast'
 import InputFeild from '@/components/InputFeild/InputFeild'
-import ImageUpload from '@/components/input/ImageUpload'
+import ImageUpload from '@/components/ImageUpload'
 
 
 
