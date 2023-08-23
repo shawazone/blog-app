@@ -47,7 +47,7 @@ export default function page() {
         })
 
         .catch(() => {
-            toast.error('Went wring') 
+            toast.error('Went wrong') 
         }).finally(() => {
             setIsLoading(false)
         })

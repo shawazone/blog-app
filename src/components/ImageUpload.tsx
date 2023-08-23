@@ -52,7 +52,7 @@ const ImageUpload:React.FC<ImageUploadProps> = ({
                     </div>
 
                     {value && (
-                        <div className='absolute inset-0 w-10 h-10'>
+                        <div className='absolute inset-0 w-150 h-150'>
                             <Image alt='upload' fill style={{objectFit:'cover'}} src={value}/>
                         </div>
                     )}
